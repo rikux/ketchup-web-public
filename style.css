@@ -1,138 +1,155 @@
 @charset "UTF-8";
 :root {
-    --width: 100vw;
-    --angle: 0deg;
-    --rotation-angle: 0deg;
-    /*-----------------
+  --width: 100vw;
+  --angle: 0deg;
+  --rotation-angle: 0deg;
+  /*-----------------
   Magic Number Alert:
 
   the 0.09719 is calculated by this formula:
   tan(11°) / 2
   11° is the current skewY value.
   ------------------*/
-    --magic-number: 0;
-    --skew-padding: calc(var(--width) * var(--magic-number));
-    --logo-color: #d90429;
-    --primary-color: #EDF2F4;
-    --secondary-color: #2B2D42;
-    --stroke-color: #111827;
-    --yellow-color: #fef3c7;
-    --top-padding: 30vh;
+  --magic-number: 0;
+  --skew-padding: calc(var(--width) * var(--magic-number));
+  --logo-color: #d90429;
+  --primary-color: #edf2f4;
+  --secondary-color: #2b2d42;
+  --stroke-color: #111827;
+  --yellow-color: #fef3c7;
+  --top-padding: 30vh;
 }
 
 @media (min-width: 42em) {
-     :root {
-        --width: 42rem;
-    }
+  :root {
+    --width: 42rem;
+  }
 }
-
 
 /*-----------
 For logo design
 ------------*/
 
 .stroke {
-    -webkit-text-stroke-width: 2px;
-    -moz-text-stroke-width: 2px;
-    -webkit-text-stroke-color: var(--stroke-color);
-    -moz-text-stroke-color: var(--stroke-color);
-    color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -moz-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--stroke-color);
+  -moz-text-stroke-color: var(--stroke-color);
+  color: transparent;
 }
 
 .shadow {
-    text-shadow: 3px 3px var(--logo-color);
+  text-shadow: 3px 3px var(--logo-color);
 }
 
 .stroke-shadow {
-    color: var(--primary-color);
-    text-shadow: -2px 0 var(--stroke-color), 0 -2px var(--stroke-color), 2px 0 var(--stroke-color), 0 2px var(--stroke-color), 2px 2px var(--stroke-color), -2px -2px var(--stroke-color), -2px 2px var(--stroke-color), 2px -2px var(--stroke-color), 6px 6px var(--logo-color);
+  color: var(--primary-color);
+  text-shadow: -2px 0 var(--stroke-color), 0 -2px var(--stroke-color),
+    2px 0 var(--stroke-color), 0 2px var(--stroke-color),
+    2px 2px var(--stroke-color), -2px -2px var(--stroke-color),
+    -2px 2px var(--stroke-color), 2px -2px var(--stroke-color),
+    6px 6px var(--logo-color);
 }
 
 .halftone {
-    position: relative;
+  position: relative;
 }
 
 .halftone:after {
-    content: "Ketchup";
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAHElEQVQYV2NUVFT8f//+fUYGBgYGMAEDcA5IBQCKJQVmn76DhAAAAABJRU5ErkJggg==") repeat;
-    /*font-size: 3em;*/
-    /* letter-spacing: 6px; */
-    left: calc(50% + 4px);
-    position: absolute;
-    top: calc(50% + 4px);
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    -webkit-text-stroke-width: 0;
-    -moz-text-stroke-width: 0;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+  content: "Ketchup";
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAHElEQVQYV2NUVFT8f//+fUYGBgYGMAEDcA5IBQCKJQVmn76DhAAAAABJRU5ErkJggg==")
+    repeat;
+  /*font-size: 3em;*/
+  /* letter-spacing: 6px; */
+  left: calc(50% + 4px);
+  position: absolute;
+  top: calc(50% + 4px);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  -webkit-text-stroke-width: 0;
+  -moz-text-stroke-width: 0;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 
 .halftone-color:after {
-    background-color: var(--logo-color);
+  background-color: var(--logo-color);
 }
 
 .beta-footnote:after {
-    content: 'BETA';
-    color: black;
-    font-size: 0.5em;
-    /* newline */
-    display: block;
-    -webkit-text-stroke-width: none;
-    -moz-text-stroke-width: none;
-    -webkit-text-stroke-color: none;
-    -moz-text-stroke-color: none;
-    color: none;
-    text-shadow: none;
-    letter-spacing: 0.2em;
+  content: "BETA";
+  color: black;
+  font-size: 0.5em;
+  /* newline */
+  display: block;
+  -webkit-text-stroke-width: none;
+  -moz-text-stroke-width: none;
+  -webkit-text-stroke-color: none;
+  -moz-text-stroke-color: none;
+  color: none;
+  text-shadow: none;
+  letter-spacing: 0.2em;
 }
 
+.description-headnote::before {
+  content: "「会う」に特化した\a未来のマッチングサービス";
+  white-space: pre;
+  color: black;
+  font-size: 0.3em;
+  /* newline */
+  display: block;
+  color: none;
+  text-shadow: none;
+  -webkit-text-stroke-width: 1px;
+  -moz-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--stroke-color);
+  -moz-text-stroke-color: var(--stroke-color);
+}
 
 /*-----------
 For diagonal display
 ------------*/
 
 .diagonal-box {
-    position: relative;
-    padding: var(--skew-padding) 0;
-    margin-top: -1px;
+  position: relative;
+  padding: var(--skew-padding) 0;
+  margin-top: -1px;
 }
 
 .rotation-box {
-    position: relative;
-    margin-top: -1px;
+  position: relative;
+  margin-top: -1px;
 }
 
 .full-height {
-    height: 100vh - var(--top-padding);
+  height: 100vh - var(--top-padding);
 }
 
 .bg-one:before {
-    background-image: linear-gradient(45deg, #654ea3, #eaafc8);
+  background-image: linear-gradient(45deg, #654ea3, #eaafc8);
 }
 
 .bg-two:before {
-    background-image: linear-gradient(-135deg, #ff0084, #33001b);
+  background-image: linear-gradient(-135deg, #ff0084, #33001b);
 }
 
 .bg-three:before {
-    background-image: linear-gradient(-135deg, #007, #003);
+  background-image: linear-gradient(-135deg, #007, #003);
 }
 
 .content {
-    max-width: var(--width);
-    margin: 0 auto;
-    position: relative;
-    /* -----------
+  max-width: var(--width);
+  margin: 0 auto;
+  position: relative;
+  /* -----------
   enable the border to see, that the content
   perfectly fits into the section withou
   bleeding into the adjecting areas:
   ------------ */
 }
-
 
 /* --------------------
 Presentational Styles 
@@ -141,66 +158,81 @@ Presentational Styles
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 100%;
-    transition: font-size 0.2s linear;
+  font-size: 100%;
+  transition: font-size 0.2s linear;
 }
 
 body {
-    background: var(--primary-color);
-    color: #003;
-    font-family: "Raleway", sans-serif;
+  background: var(--primary-color);
+  color: #003;
+  font-family: "Raleway", sans-serif;
 }
 
 h1 {
-    text-align: center;
-    margin: 0 auto 1em;
-    padding: 0.1em;
-    max-width: 42rem;
-    line-height: 1.2;
-    /* transform: skewY(var(--angle)); */
-    transform: rotate(var(--rotation-angle));
-    font-size: 4em;
-    text-transform: uppercase;
-    font-weight: 900;
+  text-align: center;
+  margin: 0 auto 1em;
+  padding: 0.1em;
+  max-width: 42rem;
+  line-height: 1.2;
+  /* transform: skewY(var(--angle)); */
+  transform: rotate(var(--rotation-angle));
+  font-size: 4em;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 h2 {
-    font-size: 2.5em;
-    margin: 0 0 0.5em;
-    font-weight: 900;
+  font-size: 2.5em;
+  margin: 0 0 0.5em;
+  font-weight: 900;
 }
 
 .logo-font {
-    margin-top: var(--top-padding);
-    font-size: min(15vw, 5em);
+  margin-top: var(--top-padding);
+  font-size: min(15vw, 5em);
 }
 
 .intro {
-    text-align: center;
-    font-size: min(3vw, 1.5em);
-    margin: 0em auto 0em;
-    color: #003;
-    font-weight: 900;
-    text-transform: uppercase;
+  text-align: center;
+  font-size: min(3vw, 1.5em);
+  margin: 0em auto 0em;
+  color: #003;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.companyOverview {
+  text-align: center;
+  font-size: min(2vw, 1em);
+  margin: 0em auto 0em;
+  color: #003;
+  font-weight: 500;
+}
+.companyOverviewTitle {
+  text-align: right;
+  font-size: min(2vw, 1em);
+  margin: 0em auto 0em;
+  color: #003;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .future-color {
-    background-image: linear-gradient(135deg, #2F80ED 0%, #B2FFDA 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg, #2b6fc7 0%, #9ee0c0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .slogan {
-    font-size: min(3.5vw, 2em);
+  font-size: min(3.5vw, 2em);
 }
 
 p {
-    font-size: 1.25em;
-    margin: 0;
-    line-height: 1.5;
+  font-size: 1.25em;
+  margin: 0;
+  line-height: 1.5;
 }
