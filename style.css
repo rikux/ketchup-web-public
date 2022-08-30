@@ -109,6 +109,13 @@ For logo design
   -moz-text-stroke-color: var(--stroke-color);
 }
 
+.applink-size {
+  width: 10em;
+}
+.qr-size {
+  width: 6em;
+}
+
 /*-----------
 For diagonal display
 ------------*/
@@ -235,4 +242,11 @@ p {
   font-size: 1.25em;
   margin: 0;
   line-height: 1.5;
+}
+.standard-link {
+  text-align: center;
+  font-size: min(2vw, 0.85em);
+  margin: 0em auto 0em;
+  color: #003;
+  font-weight: 400;
 }
